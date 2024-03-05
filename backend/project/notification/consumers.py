@@ -37,6 +37,7 @@ class NotificationConsumer(AsyncWebsocketConsumer):
         }))
 
     async def fetch_and_send_notifications(self):
+        from accounts.models import User  # Function-level import
         notifications = await self.get_notifications_from_database()
         await self.send(text_data=json.dumps({
             'notifications': notifications
