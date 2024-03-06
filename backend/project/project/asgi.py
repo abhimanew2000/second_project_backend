@@ -1,3 +1,4 @@
+
 import os
 import django
 
@@ -7,11 +8,12 @@ from notification.routing import websocket_urlpatterns as notification_websocket
 from chat.routing import websocket_urlpatterns as chat_websocket_urlpatterns
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "project.settings")
-django_asgi_app = get_asgi_application()
+django.setup()
 
 application = ProtocolTypeRouter({
-    "http": django_asgi_app,
+    "http": get_asgi_application(),
     "websocket": URLRouter(
         chat_websocket_urlpatterns + notification_websocket_urlpatterns
     ),
 })
+
