@@ -230,14 +230,16 @@ CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOWED_ORIGINS = [
 
-'http://localhost:5173',
-'https://laptop-su3kol9o',
+# 'http://localhost:5173',
+'https://master.d18d6g0aud1yk1.amplifyapp.com'
+# 'https://laptop-su3kol9o',
 
 ]
 
 
 CHANNELS_WS_ALLOWED_ORIGIN = [
-    "http://localhost:5173", 
+    # "http://localhost:5173", 
+    'https://master.d18d6g0aud1yk1.amplifyapp.com'
 
 ]
 
